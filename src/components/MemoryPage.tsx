@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Heart, Camera, ZoomIn, X, Clock, HelpCircle } from 'lucide-react';
 import { keepsakeAudio } from '../utils/audio';
+import favSmile from '../assets/favsmile.jpg';
+import favMoment from '../assets/favmoment.jpg';
+import hOther from '../assets/hother.mp4';
 
 interface PhotoData {
   id: string;
   caption: string;
   rotation: number;
   // Beautiful inline stylized sketch representations using CSS / SVGs
-  illustrationType: 'sunsets' | 'coffee' | 'holdingHands';
+  mediaType: 'image' | 'video';
+mediaSrc: string;
   detailDescription: string;
 }
 
@@ -16,28 +20,34 @@ export const MemoryPage: React.FC = () => {
   const [selectedPhoto, setSelectedPhoto] = useState<PhotoData | null>(null);
 
   const photos: PhotoData[] = [
-    {
-      id: 'smile',
-      caption: 'My favorite smile.',
-      rotation: -5,
-      illustrationType: 'sunsets',
-      detailDescription: "The exact moment you laughed at my terrible joke, your eyes crinkling up. The entire world faded, and it was just your warmth lighting up everything. I look at you in moments like that and realize I have all the luck in the universe.",
-    },
-    {
-      id: 'memory',
-      caption: 'Our favorite memory.',
-      rotation: 4,
-      illustrationType: 'holdingHands',
-      detailDescription: "Walking through the quiet streets under the golden streetlights, everything perfectly calm. Our fingers slipped together naturally, filling the empty gaps. It wasn't loud or flashy; it was simply the feeling of belonging.",
-    },
-    {
-      id: 'day',
-      caption: 'The day I knew.',
-      rotation: -2,
-      illustrationType: 'coffee',
-      detailDescription: "A cold afternoon sitting across from each other, steam rising lazily from our mugs. You looked at me with so much quiet kindness and understanding, and I suddenly knew I didn't want to live another chapter without you in it.",
-    },
-  ];
+  {
+    id: 'smile',
+    caption: 'My favorite smile.',
+    rotation: -5,
+    mediaType: 'image',
+    mediaSrc: favSmile,
+    detailDescription:
+      "The cutest smile in the world",
+  },
+  {
+    id: 'memory',
+    caption: 'Our favorite memory.',
+    rotation: 4,
+    mediaType: 'image',
+    mediaSrc: favMoment,
+    detailDescription:
+      "The cheek grab should tell you",
+  },
+  {
+    id: 'day',
+    caption: 'Hottest girl.',
+    rotation: -2,
+    mediaType: 'video',
+    mediaSrc: hOther,
+    detailDescription:
+      "Hottest diva to ever exist",
+  },
+];
 
   const handlePhotoClick = (photo: PhotoData) => {
     keepsakeAudio.playPaperUnfoldSound();
