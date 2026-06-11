@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Heart, Camera, ZoomIn, X, Clock, HelpCircle } from 'lucide-react';
 import { keepsakeAudio } from '../utils/audio';
-import favSmile from '../assets/favsmile.jpg';
-import favMoment from '../assets/favmoment.jpg';
+import favSmile from '../assets/favsmile.jpeg';
+import favMoment from '../assets/favmoment.jpeg';
 import hOther from '../assets/hother.mp4';
 
 interface PhotoData {
