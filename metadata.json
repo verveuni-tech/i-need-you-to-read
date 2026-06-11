@@ -1,0 +1,6 @@
+{
+  "name": "A Few Pages I Need To Read",
+  "description": "An emotional interactive digital keepsake, scrapbook, and love letter book designed for Khushi.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
